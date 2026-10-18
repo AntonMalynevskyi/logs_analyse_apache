@@ -1,0 +1,2 @@
+export JAVA_OPTS="${JAVA_OPTS:--Xms512m -Xmx2g -XX:+UseG1GC}"
+export FLUME_JAVA_OPTS="${FLUME_JAVA_OPTS:-}"

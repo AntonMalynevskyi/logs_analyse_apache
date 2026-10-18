@@ -1,0 +1,16 @@
+FROM apache/hadoop:3
+USER root
+
+# Download and extract Apache Flume
+RUN wget -q https://archive.apache.org/dist/flume/1.11.0/apache-flume-1.11.0-bin.tar.gz && \
+    tar -xzf apache-flume-1.11.0-bin.tar.gz -C /opt/ && \
+    rm apache-flume-1.11.0-bin.tar.gz && \
+    mv /opt/apache-flume-1.11.0-bin /opt/flume
+
+ENV FLUME_HOME=/opt/flume
+ENV PATH=$PATH:$FLUME_HOME/bin
+ENV HADOOP_HOME=/opt/hadoop
+
+
+# Point Flume to Hadoop's classpath so it can talk to HDFS
+ENV FLUME_CLASSPATH="/opt/hadoop/share/hadoop/common/*:/opt/hadoop/share/hadoop/common/lib/*:/opt/hadoop/share/hadoop/hdfs/*:/opt/hadoop/share/hadoop/hdfs/lib/*"

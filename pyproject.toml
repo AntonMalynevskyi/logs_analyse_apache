@@ -1,0 +1,9 @@
+[project]
+name = "logs-analyse"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "confluent-kafka>=2.16.0",
+    "faker>=40.43.0",
+    "pyspark-stubs>=3.0.0.post3",
+]
