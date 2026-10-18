@@ -10,6 +10,15 @@ A local log-processing demo. A Python generator sends events to Kafka. Flume arc
 
 The generator runs on the host and connects to Kafka at `localhost:9092`. Spark and Flume run in Docker.
 
+## Get the project
+
+Clone the repository and move into its directory:
+
+```sh
+git clone https://github.com/AntonMalynevskyi/logs_analyse_apache.git
+cd logs_analyse_apache
+```
+
 ## Run the full pipeline
 
 Run these commands from the project root.
